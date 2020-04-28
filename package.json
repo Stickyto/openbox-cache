@@ -1,0 +1,17 @@
+{
+  "name": "openbox-cache",
+  "version": "1.0.0",
+  "description": "openbox-cache",
+  "main": "index.js",
+  "dependencies": {
+    "redis": "^3.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-jest": "^23.8.2",
+    "jest": "^25.4.0"
+  },
+  "scripts": {
+    "test": "CACHE_HOST=localhost CACHE_PORT=6379 NODE_ENV=local jest"
+  }
+}
