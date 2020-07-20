@@ -7,9 +7,9 @@
     "redis": "^3.0.2"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-plugin-jest": "^23.8.2",
-    "jest": "^25.4.0"
+    "eslint": "^7.5.0",
+    "eslint-plugin-jest": "^23.18.0",
+    "jest": "^26.1.0"
   },
   "scripts": {
     "test": "CACHE_HOST=localhost CACHE_PORT=6379 NODE_ENV=local jest"
