@@ -26,17 +26,17 @@ function cache () {
         cacheInstance.get(key, (error, value) => (error ? reject(error) : resolve(value)))
       })
     },
-    // setManyToOneValue: (keys, value) => {
-    //   if (keys.length === 0) return Promise.resolve('redis setManyToOneValue empty array but ok')
-    //   const values = []
-    //   keys.forEach(key => {
-    //     values.push(key)
-    //     values.push(value)
-    //   })
-    //   return new Promise((resolve, reject) => {
-    //     cacheInstance.mset(...values, (error, values) => (error ? reject(new Error('redis setManyToOneValue shit')) : resolve(values)))
-    //   })
-    // },
+    setManyToOneValue: (keys, value) => {
+      if (keys.length === 0) return Promise.resolve('redis setManyToOneValue empty array but ok')
+      const values = []
+      keys.forEach(key => {
+        values.push(key)
+        values.push(value)
+      })
+      return new Promise((resolve, reject) => {
+        cacheInstance.mset(...values, (error, values) => (error ? reject(new Error('redis setManyToOneValue shit')) : resolve(values)))
+      })
+    },
     getMany: (keys) => {
       if (keys.length === 0) return Promise.resolve('redis getMany empty array but ok')
       return new Promise((resolve, reject) => {
