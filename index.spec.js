@@ -12,7 +12,7 @@ describe('Cash', () => {
   })
 
   it('sets/gets one value', async () => {
-    await cache.set('test-1-x0', '0')
+    await cache.set('test-1-x0', '0', 10)
     const getResult = await cache.get('test-1-x0')
     expect(getResult).toBe('0')
   })

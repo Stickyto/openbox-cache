@@ -16,9 +16,12 @@ function cache () {
     cacheInstance = redis.createClient(config)
   }
   return {
-    set: (key, value) => {
+    set: (key, value, ttl) => {
       return new Promise((resolve, reject) => {
-        cacheInstance.set(key, value, (error) => (error ? reject(error) : resolve()))
+        cacheInstance.set(key, value, (error) => (error ? reject(error) : () => {
+          resolve()
+          typeof ttl === 'number' && cacheInstance.setex(key, ttl, value)
+        })())
       })
     },
     get: (key) => {
