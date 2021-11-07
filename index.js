@@ -37,23 +37,23 @@ function cache () {
         values.push(value)
       })
       return new Promise((resolve, reject) => {
-        cacheInstance.mset(...values, (error, values) => (error ? reject(new Error('redis setManyToOneValue shit')) : resolve(values)))
+        cacheInstance.mset(...values, (error, values) => (error ? reject(new Error('redis setManyToOneValue -> fucked')) : resolve(values)))
       })
     },
     getMany: (keys) => {
       if (keys.length === 0) return Promise.resolve('redis getMany empty array but ok')
       return new Promise((resolve, reject) => {
-        cacheInstance.mget(keys, (error, values) => (error ? reject(new Error('redis getMany shit')) : resolve(values)))
+        cacheInstance.mget(keys, (error, values) => (error ? reject(new Error('redis getMany -> fucked')) : resolve(values)))
       })
     },
     purge: () => {
       return new Promise((resolve, reject) => {
-        cacheInstance.flushdb((error, values) => (error ? reject(new Error('redis purge shit')) : resolve(true)))
+        cacheInstance.flushdb((error, values) => (error ? reject(new Error('redis purge -> fucked')) : resolve(true)))
       })
     },
     getSize: () => {
       return new Promise((resolve, reject) => {
-        cacheInstance.dbsize((error, value) => (error ? reject(new Error('redis purge shit')) : resolve(value)))
+        cacheInstance.dbsize((error, value) => (error ? reject(new Error('redis purge -> fucked')) : resolve(value)))
       })
     },
     close: () => {
