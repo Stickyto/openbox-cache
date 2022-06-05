@@ -1,6 +1,6 @@
 {
   "name": "openbox-cache",
-  "version": "5.6.0",
+  "version": "7.0.0",
   "description": "openbox-cache",
   "main": "index.js",
   "dependencies": {
