@@ -4,7 +4,7 @@
   "description": "openbox-cache",
   "main": "index.js",
   "dependencies": {
-    "redis": "^4.5.1"
+    "@redis/client": "^1.4.2"
   },
   "devDependencies": {
     "eslint": "^8.30.0",
