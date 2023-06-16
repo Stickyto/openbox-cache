@@ -2,8 +2,8 @@ name: Publish Package
 on:
   push:
     branches:
-      # - master  # change this to your default branch if not "master"
-      - feat/120-typescript-migration # change this to your default branch if not "master"
+      - master  # change this to your default branch if not "master"
+      # - feat/xyz # change this to your default branch if not "master"
 
 jobs:
   build:
